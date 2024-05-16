@@ -1,3 +1,7 @@
+* body{
+  background-color: black;
+}
+
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -5,7 +9,7 @@
   }
   
   h1 {
-    color: #333;
+    color: #ffffff;
   }
   
   input[type="text"] {
@@ -17,7 +21,7 @@
   button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #333;
+    background-color: #c20a0a;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -35,6 +39,8 @@
     background-color: #c5641591;
     border-radius: 5px;
     min-height: 150px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .movie img {
