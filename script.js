@@ -29,8 +29,21 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
             let movieDiv = document.createElement("div")
             movieDiv.classList.add("movie")
 
+            function cortarString(string, num) {
+                if (string.length > num) {
+                    return string.slice(0, num) + '...'; // Agregar puntos suspensivos si el texto es muy largo
+                } else {
+                    return string;
+                }
+            }
+
             let titulo = document.createElement("h3")
-            titulo.textContent = movie.title
+            titulo.textContent = cortarString(movie.title, 30)
+            titulo.title = movie.title 
+            
+      
+
+
 
             let fechaLanzamiento = document.createElement("p")
             fechaLanzamiento.innerHTML =  `<span class="details">Lanzamiento: </span>  ${movie.release_date}`
@@ -38,12 +51,34 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
             let poster = document.createElement("img")
             
             poster.src = movie.poster_path ? url_img + movie.poster_path : "img/images.png";
+            poster.classList.add("posterImg")
 
             let calificacion = document.createElement("p")
             calificacion.innerHTML = `<span class="details">Puntaje: </span> ${movie.vote_average}`
 
             let overview = document.createElement("p")
             overview.innerHTML= `<span class="details">Resumen: </span> ${movie.overview}`
+
+            let iconoAgregar = document.createElement("img")
+            iconoAgregar.src = "img/add.svg"
+            iconoAgregar.classList.add("agregar")
+
+            iconoAgregar.addEventListener("click", () => {
+                // Si el ícono es un corazón, cambiarlo a agregar
+                if (iconoAgregar.classList.contains("showHeart")) {
+                    iconoAgregar.src = "img/add.svg"
+                    iconoAgregar.classList.remove("showHeart")
+                    iconoAgregar.classList.add("agregar")
+                } else {
+                    // Si no, cambiarlo a corazón
+                    iconoAgregar.src = "img/heart.svg"
+                    iconoAgregar.classList.remove("agregar")
+                    iconoAgregar.classList.add("showHeart")
+                }
+            })
+
+     
+
             
 
             movieDiv.appendChild(poster)
@@ -51,6 +86,8 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
             movieDiv.appendChild(fechaLanzamiento)
             movieDiv.appendChild(calificacion)
             movieDiv.appendChild(overview)
+            movieDiv.appendChild(iconoAgregar)
+            
             resultados.appendChild(movieDiv)
             
         });
