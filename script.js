@@ -8,7 +8,7 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
      const buscarPeliculas = () => {
      let buscarPelicula = document.getElementById("buscarInput").value;
       
-     fetch(`${url_base}?query=${buscarPelicula}&api_key=${api_key}`)
+     fetch(`${url_base}?query=${buscarPelicula}&api_key=${api_key}&language=es-AR`)
      .then(response=> response.json())
      .then(response => displayMovie(response.results)) }
     
@@ -33,19 +33,24 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
             titulo.textContent = movie.title
 
             let fechaLanzamiento = document.createElement("p")
-            fechaLanzamiento.textContent = "Lanzamiento: " + movie.release_date
+            fechaLanzamiento.innerHTML =  `<span class="details">Lanzamiento: </span>  ${movie.release_date}`
 
             let poster = document.createElement("img")
             
             poster.src = movie.poster_path ? url_img + movie.poster_path : "img/images.png";
 
             let calificacion = document.createElement("p")
-            calificacion.textContent = `Puntaje: ${movie.vote_average}`
+            calificacion.innerHTML = `<span class="details">Puntaje: </span> ${movie.vote_average}`
+
+            let overview = document.createElement("p")
+            overview.innerHTML= `<span class="details">Resumen: </span> ${movie.overview}`
+            
 
             movieDiv.appendChild(poster)
             movieDiv.appendChild(titulo)
             movieDiv.appendChild(fechaLanzamiento)
             movieDiv.appendChild(calificacion)
+            movieDiv.appendChild(overview)
             resultados.appendChild(movieDiv)
             
         });
@@ -53,8 +58,6 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
 
 
 } )
-
-
 
 
 
