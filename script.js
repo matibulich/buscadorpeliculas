@@ -21,7 +21,7 @@ document.getElementById("buscarBoton").addEventListener("click", ()=>{
         resultados.innerHTML = " "
 
         if (movies.length === 0 ){
-            resultados.innerHTML = "<p>Introduce una pelicula válida</p>"
+            resultados.innerHTML = `<p style="color:white">Introduce una pelicula válida</p>`
             return
         }
         

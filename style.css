@@ -48,8 +48,13 @@
     width: 100px;
     float: left;
     margin-right: 10px;
-    
-  }
+    transition: 1s ease;
+     }git
+
+     .movie img:hover{
+      scale: 200%;
+      box-shadow:5px 5px 15px black;
+     }
   
   .movie h2 {
     font-size: 18px;
