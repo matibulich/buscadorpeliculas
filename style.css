@@ -1,98 +1,132 @@
-* body{
+* body {
   background-color: black;
+}
+#miLista {
+  text-decoration: none;
+  color: white;
 }
 
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #ffffff;
-  }
-  
-  input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #c20a0a;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #resultados {
-    margin-top: 20px;
-    text-align: left;
-    min-height: 200px;
-  }
-  
-  .movie {
-    position: relative;
-    margin-bottom: 10px;
-    padding: 30px;
-    background-color: #c20a0ac4;
-    border-radius: 5px;
-    min-height: 150px;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .movie .posterImg {
-    min-height: 150px;
-    width: 100px;
-    float: left;
-    margin-right: 10px;
-    transition: 1s ease;
-     }
-
-     .movie .posterImg:hover{
-      scale: 200%;
-      box-shadow:5px 5px 15px black;
-     }
-  
-  .movie h2 {
-    font-size: 18px;
-    margin-top: 0;
-  }
-  
-  .movie p {
-    margin: 5px 0;
-  }
-
-  .details{
-    color:rgb(0, 0, 160);
-    font-weight: 600;
-  }
-
-  .agregar {
-    width: 50px; 
-    height: 50px;
-    position: absolute;
-    top:10px;
-    right:10px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.agregar:hover{
-  scale:110%
+h1 {
+  color: #ffffff;
 }
 
 
-.showHeart{
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #c20a0a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#resultados {
+  margin-top: 20px;
+  text-align: left;
+  min-height: 200px;
+}
+
+.movie {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 30px;
+  background-color: #c20a0ac4;
+  border-radius: 5px;
+  min-height: 150px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.movie .posterImg {
+  min-height: 150px;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+  transition: 1s ease;
+}
+
+.movie .posterImg:hover {
+  scale: 200%;
+  box-shadow: 5px 5px 15px black;
+}
+
+.movie h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.movie p {
+  margin: 5px 0;
+}
+
+.details {
+  color: rgb(0, 0, 160);
+  font-weight: 600;
+}
+
+.agregar {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.agregar:hover {
+  scale: 110%;
+}
+
+.showHeart {
   width: 30px; /* Tamaño inicial pequeño */
   height: 30px;
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  transition:  transform 0.3s ease; /* Transiciones para la opacidad y la transformación */
-  transform: scale(1.5); /* Tamaño inicial pequeño */
+  transition: transform 0.3s ease;
+  transform: scale(1.5);
+}
+
+.items_lista{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  border-bottom: #fff 1px solid;
+ 
+
+}
+
+#miLista_content{margin-top: 20px;
+text-align: center;
+background-color:#c20a0ac4;
+padding: 20px;
+border-radius:5px
+
+}
+
+.boton_quitar img{
+  width:20px;
+  height:20px;
+  cursor: pointer;
+  
+ 
+  
 }
