@@ -81,7 +81,7 @@ document.getElementById("buscarBoton").addEventListener("click", () => {
           iconoAgregar.classList.remove("agregar");
           iconoAgregar.classList.add("showHeart");
 
-          favoritos.push(movie.title);
+          favoritos.push({ titulo: movie.title, lanzamiento: movie.release_date });
         }
 
         localStorage.setItem('favoritos', JSON.stringify(favoritos));

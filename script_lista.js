@@ -7,21 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (favoritos.length === 0) {
       miListaContent.innerHTML = `<p style="color:white">No hay películas en la lista</p>`;
     } else {
-      favoritos.forEach((titulo) => {
+      favoritos.forEach((fav) => {
         let tituloElemento = document.createElement("p");
-        tituloElemento.innerHTML = `<span class="boton_quitar"><img src="/img/cross.svg" alt="quitar"></span>${titulo}`;
+        tituloElemento.innerHTML = `<span class="boton_quitar"><img src="/img/cross.svg" alt="quitar"></span>${fav.titulo} (${fav.lanzamiento})`;
         tituloElemento.classList.add("items_lista");
 
-        tituloElemento
-          .querySelector(".boton_quitar")
-          .addEventListener("click", () => {
+        tituloElemento.querySelector(".boton_quitar").addEventListener("click", () => {
             // Remueve item de la lista de favoritos
-            favoritos = favoritos.filter((fav) => fav !== titulo);
+            favoritos = favoritos.filter((item) => item.lanzamiento !== fav.lanzamiento);
             // Guarda lista actualizada en localStorage
             localStorage.setItem("favoritos", JSON.stringify(favoritos));
             // Actualizar la lista
             actualizarLista();
           });
+          
 
         miListaContent.appendChild(tituloElemento);
       });
@@ -33,10 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         favoritos = [];
         // Actualizar el localStorage
         localStorage.setItem("favoritos", JSON.stringify(favoritos));
-        // Actualizar la lista
+        
+        actualizarLista();
       });
 
       miListaContent.appendChild(boton_limpiar);
+      
     }
   };
 
